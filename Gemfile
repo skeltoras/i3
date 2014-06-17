@@ -34,6 +34,33 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+# Use of own gems
+#https://github.com/twbs/bootstrap-sass
+gem 'bootstrap-sass', '~> 3.1.1'
+#https://github.com/thoughtbot/paperclip
+gem 'paperclip', github: 'thoughtbot/paperclip'
+#https://github.com/mislav/will_paginate
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
+#https://github.com/plataformatec/devise
+gem 'devise'
+#https://github.com/plataformatec/simple_form
+gem 'simple_form'
+#https://github.com/stefanpenner/country_select
+gem 'country_select'
+
+# Use for development
+group :development do
+  #https://github.com/charliesome/better_errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  #https://github.com/MiniProfiler/rack-mini-profiler
+  gem 'rack-mini-profiler'
+  #https://github.com/ryanb/letter_opener
+  gem 'letter_opener'
+  #https://github.com/stympy/faker
+  gem 'faker'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
