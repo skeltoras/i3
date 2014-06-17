@@ -4,9 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  # when allowing distinct User records with, e.g., "username" and "UserName"...
-  where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
-  
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   #attr_accessor :login
@@ -26,4 +23,7 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+  
+  # when allowing distinct User records with, e.g., "username" and "UserName"...
+  #where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
 end
